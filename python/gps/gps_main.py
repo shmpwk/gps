@@ -9,7 +9,7 @@ import os
 import os.path
 import sys
 import copy
-import argparse
+import argparse #プログラム実行時にコマンドラインで引数を受け取る処理をするlibrary
 import threading
 import time
 import traceback
@@ -282,7 +282,7 @@ def main():
     """ Main function to be run. """
     parser = argparse.ArgumentParser(description='Run the Guided Policy Search algorithm.')
     parser.add_argument('experiment', type=str,
-                        help='experiment name')
+                        help='experiment name') #Must be specified.
     parser.add_argument('-n', '--new', action='store_true',
                         help='create new experiment')
     parser.add_argument('-t', '--targetsetup', action='store_true',
@@ -297,7 +297,7 @@ def main():
                         help='quit GUI automatically when finished')
     args = parser.parse_args()
 
-    exp_name = args.experiment
+    exp_name = args.experiment # For MuJoCo example, mjc_example or mjc_badmm_example.
     resume_training_itr = args.resume
     test_policy_N = args.policy
 
